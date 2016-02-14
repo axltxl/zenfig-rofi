@@ -1,26 +1,27 @@
-!-------------------------------------------------------------------------------
-! rofi settings
-! vim: ft=xdefaults
-!-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
+# rofi settings
+# vim: ft=jinja
+#-------------------------------------------------------------------------------
+
 
 rofi.modi:                           window,run,ssh
 rofi.opacity:                        85
 rofi.width:                          100
 rofi.lines:                          7
 rofi.columns:                        1
-rofi.font:                           FONT_BASE 22
+rofi.font:                           {{ rofi_font }} {{ rofi_font_size }}
 rofi.color-enabled:                  true
-rofi.color-normal:                   base00,base07,base00,base0D,base00
-rofi.color-urgent:                   base00,base07,base00,base08,base00
-rofi.color-active:                   base00,base07,base00,base0B,base00
-rofi.color-window:                   base00,base00,base02
+rofi.color-normal:                   {{ rofi_color_normal_bg|norm_hex }},{{rofi_color_normal_fg|norm_hex }},{{ rofi_color_normal_bg_alt|norm_hex }},{{ rofi_color_normal_hl_bg|norm_hex }},{{ rofi_color_normal_hl_fg|norm_hex }}
+rofi.color-urgent:                   {{ rofi_color_urgent_bg|norm_hex }},{{rofi_color_urgent_fg|norm_hex }},{{ rofi_color_urgent_bg_alt|norm_hex }},{{ rofi_color_urgent_hl_bg|norm_hex }},{{ rofi_color_urgent_hl_fg|norm_hex }}
+rofi.color-active:                   {{ rofi_color_active_bg|norm_hex }},{{rofi_color_active_fg|norm_hex }},{{ rofi_color_active_bg_alt|norm_hex }},{{ rofi_color_active_hl_bg|norm_hex }},{{ rofi_color_active_hl_fg|norm_hex }}
+rofi.color-window:                   {{ rofi_color_window_bg|norm_hex }},{{rofi_color_window_border|norm_hex }},{{ rofi_color_window_separator|norm_hex }}
 rofi.bw:                             1
 rofi.location:                       0
 rofi.padding:                        400
 rofi.yoffset:                        0
 rofi.xoffset:                        0
 rofi.fixed-num-lines:                false
-rofi.terminal:                       TERM
+rofi.terminal:                       {{ rofi_term }}
 rofi.ssh-client:                     ssh
 rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
 rofi.run-command:                    {cmd}
