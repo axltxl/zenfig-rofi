@@ -1,0 +1,9 @@
+---
+author: Alejandro Ricoveri
+name: rofi
+description: rofi zenfiguration file
+version: 0.0.1
+templates:
+    config:
+        output_file: .Xresources.d/rofi
+

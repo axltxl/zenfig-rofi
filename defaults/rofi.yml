@@ -1,0 +1,17 @@
+################################################
+# Jinja2 template for rofi configuration file
+# ---------------------------
+# Author: Alejandro Ricoveri <axltxl.github.io>
+# vim: ft=yaml
+################################################
+
+# General
+
+# Fonts
+rofi_font: '{{ @term_font }}'
+rofi_font_size: '{{ @term_font_size }}'
+
+# Miscelaneous
+rofi_browser: '{{ @browser }}'
+
+# colors
