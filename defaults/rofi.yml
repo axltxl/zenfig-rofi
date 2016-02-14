@@ -6,12 +6,34 @@
 ################################################
 
 # General
+rofi_term: '{{ @term }}'
 
 # Fonts
-rofi_font: '{{ @term_font }}'
-rofi_font_size: '{{ @term_font_size }}'
+rofi_font: '{{ @font }}'
+rofi_font_size: '{{ @font_size }}'
 
 # Miscelaneous
 rofi_browser: '{{ @browser }}'
 
 # colors
+rofi_color_normal_bg: '{{ @color_base00 }}'
+rofi_color_normal_fg: '{{ @color_base07 }}'
+rofi_color_normal_bg_alt: '{{ @color_base00 }}'
+rofi_color_normal_hl_bg: '{{ @color_base0D }}'
+rofi_color_normal_hl_fg: '{{ @color_base00 }}'
+
+rofi_color_urgent_bg: '{{ @color_base00 }}'
+rofi_color_urgent_fg: '{{ @color_base07 }}'
+rofi_color_urgent_bg_alt: '{{ @color_base00 }}'
+rofi_color_urgent_hl_bg: '{{ @color_base08 }}'
+rofi_color_urgent_hl_fg: '{{ @color_base00 }}'
+
+rofi_color_active_bg: '{{ @color_base00 }}'
+rofi_color_active_fg: '{{ @color_base07 }}'
+rofi_color_active_bg_alt: '{{ @color_base00 }}'
+rofi_color_active_hl_bg: '{{ @color_base0B }}'
+rofi_color_active_hl_fg: '{{ @color_base00 }}'
+
+rofi_color_window_bg: '{{ @color_base00 }}'
+rofi_color_window_border: '{{ @color_base07 }}'
+rofi_color_window_separator: '{{ @color_base07 }}'
