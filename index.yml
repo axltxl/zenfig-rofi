@@ -5,5 +5,5 @@ description: rofi zenfiguration file
 version: 0.0.1
 templates:
     config:
-        output_file: .Xresources.d/rofi
+        output_file: '{{ @rofi_conf_file }}'
 

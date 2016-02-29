@@ -6,6 +6,7 @@
 ################################################
 
 # General
+rofi_conf_file: '{{ "%s/.Xresources.d/rofi"|format(@zenfig_install_prefix) }}'
 rofi_term: '{{ @term }}'
 
 # Fonts
