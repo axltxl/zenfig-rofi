@@ -1,48 +1,49 @@
-#-------------------------------------------------------------------------------
-# rofi settings
-# vim: ft=jinja
-#-------------------------------------------------------------------------------
+################################################
+# Jinja2 template for rofi configuration file
+# ---------------------------
+# Author: Alejandro Ricoveri <axltxl.xyz>
+# vim: ft=jinja cms=#%s
+################################################
 
-
-rofi.modi:                           window,run,ssh
-rofi.opacity:                        85
-rofi.width:                          100
-rofi.lines:                          7
-rofi.columns:                        1
+rofi.modi:                           {{ rofi_modi|join(",") }}
+rofi.opacity:                        {{ rofi_opacity }}
+rofi.width:                          {{ rofi_width }}
+rofi.lines:                          {{ rofi_lines }}
+rofi.columns:                        {{ rofi_columns }}
 rofi.font:                           {{ rofi_font }} {{ rofi_font_size }}
-rofi.color-enabled:                  true
-rofi.color-normal:                   {{ rofi_color_normal_bg|norm_hex }},{{rofi_color_normal_fg|norm_hex }},{{ rofi_color_normal_bg_alt|norm_hex }},{{ rofi_color_normal_hl_bg|norm_hex }},{{ rofi_color_normal_hl_fg|norm_hex }}
-rofi.color-urgent:                   {{ rofi_color_urgent_bg|norm_hex }},{{rofi_color_urgent_fg|norm_hex }},{{ rofi_color_urgent_bg_alt|norm_hex }},{{ rofi_color_urgent_hl_bg|norm_hex }},{{ rofi_color_urgent_hl_fg|norm_hex }}
-rofi.color-active:                   {{ rofi_color_active_bg|norm_hex }},{{rofi_color_active_fg|norm_hex }},{{ rofi_color_active_bg_alt|norm_hex }},{{ rofi_color_active_hl_bg|norm_hex }},{{ rofi_color_active_hl_fg|norm_hex }}
-rofi.color-window:                   {{ rofi_color_window_bg|norm_hex }},{{rofi_color_window_border|norm_hex }},{{ rofi_color_window_separator|norm_hex }}
-rofi.bw:                             1
-rofi.location:                       0
-rofi.padding:                        400
-rofi.yoffset:                        0
-rofi.xoffset:                        0
-rofi.fixed-num-lines:                false
-rofi.terminal:                       {{ rofi_term }}
-rofi.ssh-client:                     ssh
-rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
-rofi.run-command:                    {cmd}
-rofi.run-list-command:
-rofi.run-shell-command:              {terminal} -e {cmd}
-rofi.disable-history:                false
-rofi.levenshtein-sort:               true
-rofi.case-sensitive:                 false
-rofi.sidebar-mode:                   false
-rofi.lazy-filter-limit:              5000
-rofi.eh:                             1
-rofi.auto-select:                    false
-rofi.parse-hosts:                    false
-rofi.combi-modi:                     window,run
-rofi.fuzzy:                          true
-rofi.m:                              -1
-rofi.line-margin:                    2
-rofi.filter:
-rofi.separator-style:                dash
-rofi.hide-scrollbar:                 true
-rofi.pid:                            /run/user/1000/rofi.pid
+rofi.color-enabled:                  {{ rofi_color_enabled|bool2str }}
+rofi.color-normal:                   {{ rofi_color_normal|join(",") }}
+rofi.color-urgent:                   {{ rofi_color_urgent|join(",") }}
+rofi.color-active:                   {{ rofi_color_active|join(",") }}
+rofi.color-window:                   {{ rofi_color_window|join(",") }}
+rofi.bw:                             {{ rofi_bw }}
+rofi.location:                       {{ rofi_location }}
+rofi.padding:                        {{ rofi_padding }}
+rofi.yoffset:                        {{ rofi_yoffset }}
+rofi.xoffset:                        {{ rofi_xoffset }}
+rofi.fixed-num-lines:                {{ rofi_fixed_num_lines|bool2str }}
+rofi.terminal:                       {{ rofi_terminal }}
+rofi.ssh-client:                     {{ rofi_ssh_client }}
+rofi.ssh-command:                    {{ rofi_ssh_command }}
+rofi.run-command:                    {{ rofi_run_command }}
+rofi.run-list-command:               {{ rofi_run_list_command }}
+rofi.run-shell-command:              {{ rofi_run_shell_command }}
+rofi.disable-history:                {{ rofi_disable_history|bool2str }}
+rofi.levenshtein-sort:               {{ rofi_levenshtein_sort|bool2str }}
+rofi.case-sensitive:                 {{ rofi_case_sensitive|bool2str }}
+rofi.sidebar-mode:                   {{ rofi_sidebar_mode|bool2str }}
+rofi.lazy-filter-limit:              {{ rofi_lazy_filter_limit }}
+rofi.eh:                             {{ rofi_eh }}
+rofi.auto-select:                    {{ rofi_auto_select|bool2str }}
+rofi.parse-hosts:                    {{ rofi_parse_hosts|bool2str }}
+rofi.combi-modi:                     {{ rofi_combi_modi|join(",") }}
+rofi.fuzzy:                          {{ rofi_fuzzy|bool2str }}
+rofi.m:                              {{ rofi_m }}
+rofi.line-margin:                    {{ rofi_line_margin }}
+rofi.filter:                         {{ rofi_filter }}
+rofi.separator-style:                {{ rofi_separator_style }}
+rofi.hide-scrollbar:                 {{ rofi_hide_scrollbar|bool2str }}
+rofi.pid:                            {{ rofi_pid }}
 rofi.kb-primary-paste:               Control+Shift+v,Shift+Insert
 rofi.kb-secondary-paste:             Control+v,Insert
 rofi.kb-clear-line:                  Control+u
@@ -93,6 +94,3 @@ rofi.kb-custom-16:                   Alt+Shift+6
 rofi.kb-custom-17:                   Alt+Shift+7
 rofi.kb-custom-18:                   Alt+Shift+8
 rofi.kb-custom-19:                   Alt+Shift+9
-rofi.key-window:
-rofi.key-run:
-rofi.key-ssh:
