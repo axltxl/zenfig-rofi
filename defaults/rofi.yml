@@ -7,34 +7,127 @@
 
 # General
 rofi_conf_file: '{{ "%s/.Xresources.d/rofi"|format(@zenfig_install_prefix) }}'
-rofi_term: '{{ @term }}'
+
+# Always show number of lines
+rofi_fixed_num_lines: false
+
+# Disable history in run/ssh
+rofi_disable_history: false
+
+# Use Levenshtein sorting
+rofi_levenshtein_sort: true
+
+# Set case sensitivity
+rofi_case_sensitive: false
+
+# Ebable/disable sidebar mode
+rofi_sidebar_mode: true
 
 # Fonts
 rofi_font: '{{ @font }}'
 rofi_font_size: '{{ @font_size }}'
 
-# Miscelaneous
+# Web browser
 rofi_browser: '{{ @browser }}'
 
-# colors
-rofi_color_normal_bg: '{{ @color_base00 }}'
-rofi_color_normal_fg: '{{ @color_base07 }}'
-rofi_color_normal_bg_alt: '{{ @color_base00 }}'
-rofi_color_normal_hl_bg: '{{ @color_base0D }}'
-rofi_color_normal_hl_fg: '{{ @color_base00 }}'
+# Enable auto select mode
+rofi_auto_select: true
 
-rofi_color_urgent_bg: '{{ @color_base00 }}'
-rofi_color_urgent_fg: '{{ @color_base07 }}'
-rofi_color_urgent_bg_alt: '{{ @color_base00 }}'
-rofi_color_urgent_hl_bg: '{{ @color_base08 }}'
-rofi_color_urgent_hl_fg: '{{ @color_base00 }}'
+# Parse hosts file for ssh mode
+rofi_parse_hosts: false
 
-rofi_color_active_bg: '{{ @color_base00 }}'
-rofi_color_active_fg: '{{ @color_base07 }}'
-rofi_color_active_bg_alt: '{{ @color_base00 }}'
-rofi_color_active_hl_bg: '{{ @color_base0B }}'
-rofi_color_active_hl_fg: '{{ @color_base00 }}'
+# Enable fuzzy matching
+rofi_fuzzy: true
 
-rofi_color_window_bg: '{{ @color_base00 }}'
-rofi_color_window_border: '{{ @color_base07 }}'
-rofi_color_window_separator: '{{ @color_base07 }}'
+#########################
+# Color settings for rofi
+#########################
+rofi_color_enabled: true
+rofi_color_normal:
+    - '{{ @color_base00|norm_hex }}' # background
+    - '{{ @color_base07|norm_hex }}' # foreground
+    - '{{ @color_base00|norm_hex }}' # background (alternative)
+    - '{{ @color_base0D|norm_hex }}' # highlight background
+    - '{{ @color_base00|norm_hex }}' # highlight foreground
+
+rofi_color_urgent:
+    - '{{ @color_base00|norm_hex }}'
+    - '{{ @color_base07|norm_hex }}'
+    - '{{ @color_base00|norm_hex }}'
+    - '{{ @color_base08|norm_hex }}'
+    - '{{ @color_base00|norm_hex }}'
+
+rofi_color_active:
+    - '{{ @color_base00|norm_hex }}'
+    - '{{ @color_base07|norm_hex }}'
+    - '{{ @color_base00|norm_hex }}'
+    - '{{ @color_base0B|norm_hex }}'
+    - '{{ @color_base00|norm_hex }}'
+
+rofi_color_window:
+    - '{{ @color_base00|norm_hex }}' # background
+    - '{{ @color_base00|norm_hex }}' # border
+    - '{{ @color_base06|norm_hex }}' # separator
+
+# Set the modi to combine in combi mode
+rofi_combi_modi:
+    - window
+    - run
+
+# Enabled modi
+rofi_modi:
+    - window
+    - run
+    - ssh
+
+# Window opacity
+rofi_opacity: 100
+
+# Number of columns and rows that are going to be shown in the window
+rofi_columns: 1
+rofi_lines: 10
+
+# Window position
+rofi_xoffset: 0
+rofi_yoffset: 0
+rofi_location: 0
+
+# Hide the scrollbar
+rofi_hide_scrollbar: true
+
+# Window dimensions
+rofi_width: 40
+rofi_padding: 50
+
+# window border width
+rofi_bw: 1
+
+# Set the spacing between the rows.
+rofi_line_margin: 2
+rofi_separator_style: dash
+
+# PID file location
+rofi_pid: '{{ "/run/user/%s/rofi.pid"|format(@zenfig_sys_uid) }}'
+
+# Terminal to use
+rofi_terminal: '{{ @term }}'
+
+# SSH client to use
+rofi_ssh_client: ssh
+rofi_ssh_command: '{terminal} -e {ssh-client} {host}'
+
+# Run command to use
+rofi_run_command: '{cmd}'
+rofi_run_list_command: '{cmd}'
+rofi_run_shell_command: '{terminal} -e {cmd}'
+
+# The number of entries required for rofi to go into lazy filter mode. In lazy filter mode,
+# it won´t  re-filter the  list on each keypress, but only after rofi been idle for 250ms.
+# Experiments shows that the default (5000 lines) works well, set to 0 to always enable.
+rofi_lazy_filter_limit: 5000
+
+# The height of a field in lines. e.g.
+rofi_eh: 1
+
+# Monitor id to show on
+rofi_m: -1
