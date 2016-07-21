@@ -52,53 +52,41 @@ rofi.filter:                         {{ rofi_filter }}
 rofi.separator-style:                {{ rofi_separator_style }}
 rofi.hide-scrollbar:                 {{ rofi_hide_scrollbar|bool2str }}
 rofi.pid:                            {{ rofi_pid }}
-rofi.kb-primary-paste:               Control+Shift+v,Shift+Insert
-rofi.kb-secondary-paste:             Control+v,Insert
-rofi.kb-clear-line:                  Control+u
-rofi.kb-move-front:                  Control+a
-rofi.kb-move-end:                    Control+e
-rofi.kb-move-word-back:              Alt+b
-rofi.kb-move-word-forward:           Alt+f
-rofi.kb-move-char-back:              Left,Control+b
-rofi.kb-move-char-forward:           Right,Control+f
-rofi.kb-remove-word-back:            Control+Alt+h
-rofi.kb-remove-word-forward:         Control+Alt+d
-rofi.kb-remove-char-forward:         Delete,Control+d
-rofi.kb-remove-char-back:            BackSpace,Control+h
-rofi.kb-accept-entry:                Control+m,Return,KP_Enter
-rofi.kb-accept-custom:               Control+Return
-rofi.kb-accept-entry-continue:       Shift+Return
-rofi.kb-mode-next:                   Shift+Right,Control+Tab
-rofi.kb-mode-previous:               Shift+Left,Control+Shift+Tab
-rofi.kb-toggle-case-sensitivity:     grave,dead_grave
-rofi.kb-delete-entry:                Shift+Delete
-rofi.kb-row-left:                    Control+Page_Up
-rofi.kb-row-right:                   Control+Page_Down
-rofi.kb-row-up:                      Control+k
-rofi.kb-row-down:                    Control+j
-rofi.kb-row-tab:                     Tab
-rofi.kb-page-prev:                   Page_Up
-rofi.kb-page-next:                   Page_Down
-rofi.kb-row-first:                   Home,KP_Home
-rofi.kb-row-last:                    End,KP_End
-rofi.kb-row-select:                  Control+space
-rofi.kb-cancel:                      Control+bracketleft
-rofi.kb-custom-1:                    Alt+1
-rofi.kb-custom-2:                    Alt+2
-rofi.kb-custom-3:                    Alt+3
-rofi.kb-custom-4:                    Alt+4
-rofi.kb-custom-5:                    Alt+5
-rofi.kb-custom-6:                    Alt+6
-rofi.kb-custom-7:                    Alt+7
-rofi.kb-custom-8:                    Alt+8
-rofi.kb-custom-9:                    Alt+9
-rofi.kb-custom-10:                   Alt+0
-rofi.kb-custom-11:                   Alt+Shift+1
-rofi.kb-custom-12:                   Alt+Shift+2
-rofi.kb-custom-13:                   Alt+Shift+3
-rofi.kb-custom-14:                   Alt+Shift+4
-rofi.kb-custom-15:                   Alt+Shift+5
-rofi.kb-custom-16:                   Alt+Shift+6
-rofi.kb-custom-17:                   Alt+Shift+7
-rofi.kb-custom-18:                   Alt+Shift+8
-rofi.kb-custom-19:                   Alt+Shift+9
+
+# Keyboard bindings
+rofi.kb-primary-paste:               {{ rofi_kb_primary_paste }}
+rofi.kb-secondary-paste:             {{ rofi_kb_secondary_paste }}
+rofi.kb-clear-line:                  {{ rofi_kb_clear_line }}
+rofi.kb-move-front:                  {{ rofi_kb_move_front }}
+rofi.kb-move-end:                    {{ rofi_kb_move_end }}
+rofi.kb-move-word-back:              {{ rofi_kb_move_word_back }}
+rofi.kb-move-word-forward:           {{ rofi_kb_move_word_forward }}
+rofi.kb-move-char-back:              {{ rofi_kb_move_char_back }}
+rofi.kb-move-char-forward:           {{ rofi_kb_move_char_forward }}
+rofi.kb-remove-word-back:            {{ rofi_kb_remove_word_back }}
+rofi.kb-remove-word-forward:         {{ rofi_kb_remove_word_forward }}
+rofi.kb-remove-char-forward:         {{ rofi_kb_remove_char_forward }}
+rofi.kb-remove-char-back:            {{ rofi_kb_remove_char_back }}
+rofi.kb-accept-entry:                {{ rofi_kb_accept_entry }}
+rofi.kb-accept-custom:               {{ rofi_kb_accept_custom }}
+rofi.kb-accept-entry-continue:       {{ rofi_kb_accept_entry_continue }}
+rofi.kb-mode-next:                   {{ rofi_kb_mode_next }}
+rofi.kb-mode-previous:               {{ rofi_kb_mode_previous }}
+rofi.kb-toggle-case-sensitivity:     {{ rofi_toggle_case_sensitivity }}
+rofi.kb-delete-entry:                {{ rofi_kb_delete_entry }}
+rofi.kb-row-left:                    {{ rofi_kb_row_left }}
+rofi.kb-row-right:                   {{ rofi_kb_row_right }}
+rofi.kb-row-up:                      {{ rofi_kb_row_up }}
+rofi.kb-row-down:                    {{ rofi_kb_row_down }}
+rofi.kb-row-tab:                     {{ rofi_kb_row_tab }}
+rofi.kb-page-prev:                   {{ rofi_kb_page_prev }}
+rofi.kb-page-next:                   {{ rofi_kb_page_next }}
+rofi.kb-row-first:                   {{ rofi_kb_row_first }}
+rofi.kb-row-last:                    {{ rofi_kb_row_last }}
+rofi.kb-row-select:                  {{ rofi_kb_row_select }}
+rofi.kb-cancel:                      {{ rofi_kb_cancel }}
+
+# Keyboard custom actions
+% for i in range(20)
+rofi.kb-custom-{{ i }}:             {{ rofi_kb_custom[i] }}
+% endfor

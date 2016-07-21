@@ -131,3 +131,60 @@ rofi_eh: 1
 
 # Monitor id to show on
 rofi_m: -1
+
+######################
+# Keyboard interaction
+######################
+rofi_kb_primary_paste:           Control+Shift+v,Shift+Insert
+rofi_kb_secondary_paste:         Control+v,Insert
+rofi_kb_clear_line:              Control+u
+rofi_kb_move_front:              Control+a
+rofi_kb_move_end:                Control+e
+rofi_kb_move_word_back:          Alt+b
+rofi_kb_move_word_forward:       Alt+f
+rofi_kb_move_char_back:          Left,Control+b
+rofi_kb_move_char_forward:       Right,Control+f
+rofi_kb_remove_word_back:        Control+Alt+h
+rofi_kb_remove_word_forward:     Control+Alt+d
+rofi_kb_remove_char_forward:     Delete,Control+d
+rofi_kb_remove_char_back:        BackSpace,Control+h
+rofi_kb_accept_entry:            Control+m,Return,KP_Enter
+rofi_kb_accept_custom:           Control+Return
+rofi_kb_accept_entry_continue:   Shift+Return
+rofi_kb_mode_next:               Shift+Right,Control+Tab
+rofi_kb_mode_previous:           Shift+Left,Control+Shift+Tab
+rofi_kb_toggle_case_sensitivity: grave,dead_grave
+rofi_kb_delete_entry:            Shift+Delete
+rofi_kb_row_left:                Control+Page_Up
+rofi_kb_row_right:               Control+Page_Down
+rofi_kb_row_up:                  Control+k
+rofi_kb_row_down:                Control+j
+rofi_kb_row_tab:                 Tab
+rofi_kb_page_prev:               Page_Up
+rofi_kb_page_next:               Page_Down
+rofi_kb_row_first:               Home,KP_Home
+rofi_kb_row_last:                End,KP_End
+rofi_kb_row_select:              Control+space
+rofi_kb_cancel:                  Escape
+
+# Keyboard custom actions
+rofi_kb_custom:
+    - Alt+1
+    - Alt+2
+    - Alt+3
+    - Alt+4
+    - Alt+5
+    - Alt+6
+    - Alt+7
+    - Alt+8
+    - Alt+9
+    - Alt+0
+    - Alt+Shift+1
+    - Alt+Shift+2
+    - Alt+Shift+3
+    - Alt+Shift+4
+    - Alt+Shift+5
+    - Alt+Shift+6
+    - Alt+Shift+7
+    - Alt+Shift+8
+    - Alt+Shift+9
