@@ -5,6 +5,9 @@
 # vim: ft=jinja cms=#%s
 ################################################
 
+# Format a bunch of hex colors into a rofi-compliant color string
+# used for its configuration.
+# Example: ['010101', 'd1d2fc', 'c1dfa1'] => '#010101,#d1d2fc,#c1dfa1'
 % macro rofi_color(color_set)
 %   set fmt_color = []
 %   for color in color_set
@@ -53,7 +56,9 @@ rofi.separator-style:            {{ rofi_separator_style }}
 rofi.hide-scrollbar:             {{ rofi_hide_scrollbar|bool2str }}
 rofi.pid:                        {{ rofi_pid }}
 
+###################
 # Keyboard bindings
+###################
 rofi.kb-primary-paste:           {{ rofi_kb_primary_paste }}
 rofi.kb-secondary-paste:         {{ rofi_kb_secondary_paste }}
 rofi.kb-clear-line:              {{ rofi_kb_clear_line }}
@@ -86,7 +91,15 @@ rofi.kb-row-last:                {{ rofi_kb_row_last }}
 rofi.kb-row-select:              {{ rofi_kb_row_select }}
 rofi.kb-cancel:                  {{ rofi_kb_cancel }}
 
+#########################
 # Keyboard custom actions
-% for i in range(20)
-rofi.kb-custom-{{ i }}:             {{ rofi_kb_custom[i] }}
-% endfor
+#########################
+% if rofi_kb_custon is iterable
+%   for kb_custom in rofi_kb_custom
+%     if loop.index <= 20
+rofi.kb-custom-{{ loop.index }}:             {{ kb_custom }}
+%     else
+%       break
+%     endif
+%   endfor
+% endif
