@@ -44,30 +44,30 @@ rofi_fuzzy: true
 #########################
 rofi_color_enabled: true
 rofi_color_normal:
-    - '{{ @color_base00|norm_hex }}' # background
-    - '{{ @color_base07|norm_hex }}' # foreground
-    - '{{ @color_base00|norm_hex }}' # background (alternative)
-    - '{{ @color_base0D|norm_hex }}' # highlight background
-    - '{{ @color_base00|norm_hex }}' # highlight foreground
+    - '{{ @color_base00 }}' # background
+    - '{{ @color_base07 }}' # foreground
+    - '{{ @color_base00 }}' # background (alternative)
+    - '{{ @color_base0D }}' # highlight background
+    - '{{ @color_base00 }}' # highlight foreground
 
 rofi_color_urgent:
-    - '{{ @color_base00|norm_hex }}'
-    - '{{ @color_base07|norm_hex }}'
-    - '{{ @color_base00|norm_hex }}'
-    - '{{ @color_base08|norm_hex }}'
-    - '{{ @color_base00|norm_hex }}'
+    - '{{ @color_base00 }}'
+    - '{{ @color_base07 }}'
+    - '{{ @color_base00 }}'
+    - '{{ @color_base08 }}'
+    - '{{ @color_base00 }}'
 
 rofi_color_active:
-    - '{{ @color_base00|norm_hex }}'
-    - '{{ @color_base07|norm_hex }}'
-    - '{{ @color_base00|norm_hex }}'
-    - '{{ @color_base0B|norm_hex }}'
-    - '{{ @color_base00|norm_hex }}'
+    - '{{ @color_base00 }}'
+    - '{{ @color_base07 }}'
+    - '{{ @color_base00 }}'
+    - '{{ @color_base0B }}'
+    - '{{ @color_base00 }}'
 
 rofi_color_window:
-    - '{{ @color_base00|norm_hex }}' # background
-    - '{{ @color_base00|norm_hex }}' # border
-    - '{{ @color_base06|norm_hex }}' # separator
+    - '{{ @color_base00 }}' # background
+    - '{{ @color_base00 }}' # border
+    - '{{ @color_base06 }}' # separator
 
 # Set the modi to combine in combi mode
 rofi_combi_modi:

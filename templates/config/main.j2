@@ -5,6 +5,14 @@
 # vim: ft=jinja cms=#%s
 ################################################
 
+% macro rofi_color(color_set)
+%   set fmt_color = []
+%   for color in color_set
+%     do fmt_color.append(color|norm_hex)
+%-  endfor
+{{ fmt_color|join(",") }}
+%- endmacro
+
 rofi.modi:                           {{ rofi_modi|join(",") }}
 rofi.opacity:                        {{ rofi_opacity }}
 rofi.width:                          {{ rofi_width }}
@@ -12,10 +20,10 @@ rofi.lines:                          {{ rofi_lines }}
 rofi.columns:                        {{ rofi_columns }}
 rofi.font:                           {{ rofi_font }} {{ rofi_font_size }}
 rofi.color-enabled:                  {{ rofi_color_enabled|bool2str }}
-rofi.color-normal:                   {{ rofi_color_normal|join(",") }}
-rofi.color-urgent:                   {{ rofi_color_urgent|join(",") }}
-rofi.color-active:                   {{ rofi_color_active|join(",") }}
-rofi.color-window:                   {{ rofi_color_window|join(",") }}
+rofi.color-normal:                   {{ rofi_color(rofi_color_normal) }}
+rofi.color-urgent:                   {{ rofi_color(rofi_color_urgent) }}
+rofi.color-active:                   {{ rofi_color(rofi_color_active) }}
+rofi.color-window:                   {{ rofi_color(rofi_color_window) }}
 rofi.bw:                             {{ rofi_bw }}
 rofi.location:                       {{ rofi_location }}
 rofi.padding:                        {{ rofi_padding }}
