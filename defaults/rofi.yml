@@ -31,7 +31,7 @@ rofi_font_size: '{{ @font_size }}'
 rofi_browser: '{{ @browser }}'
 
 # Enable auto select mode
-rofi_auto_select: true
+rofi_auto_select: false
 
 # Parse hosts file for ssh mode
 rofi_parse_hosts: false
